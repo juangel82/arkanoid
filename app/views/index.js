@@ -6,8 +6,8 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
     render: function render(modelOptions) {
       this.model = modelOptions;
       this.$el.html(html);
-      var tonto = document.getElementById('musica');
-      console.log('tonto ' + tonto.getAttribute('currentSrc'));
+      var tonto = new Media('file:///android_asset/www/assets/sound/musica.mp3');
+      console.log('tonto ' + tonto);
       tonto.play();
       if (this.model.get('music')){
        var prueba = this.$('#musica');//.trigger('play');
