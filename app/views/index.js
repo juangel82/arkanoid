@@ -7,7 +7,14 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       
-       document.getElementById('musica').play();
+       var tolo = document.getElementById('musica');
+       var src = tolo.getAttribute('rsc');
+       
+       if (tolo.src===""|| tolo.src===null) {
+         console.log('es nulo');
+         var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
+         media.play();
+       }
       
         if (this.model.get('music')){
         //this.$('#musica').trigger('play');
