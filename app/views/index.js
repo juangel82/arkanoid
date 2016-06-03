@@ -17,12 +17,13 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
          var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
          media.play();
        } else{
-         media.pause();
+         
           this.$('#musica').trigger('play');
        }
        
         }
       else {
+        media.pause();
         this.$('#musica').trigger('pause');
       }
     }
