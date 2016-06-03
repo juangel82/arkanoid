@@ -10,16 +10,19 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
        var tolo = document.getElementById('musica');
        var src = tolo.getAttribute('rsc');
        
-       if (tolo.src==="") {
+      
+      
+        if (this.model.get('music')){
+       
+        console.log('deberia sonar');
+         if (tolo.src==="") {
          console.log('es nulo');
          var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
          media.play();
+       } else{
+          this.$('#musica').trigger('play');
        }
-      
-        if (this.model.get('music')){
-        //this.$('#musica').trigger('play');
-        console.log('deberia sonar');
-        document.getElementById('musica').play();
+       
         }
       else {
         this.$('#musica').trigger('pause');
