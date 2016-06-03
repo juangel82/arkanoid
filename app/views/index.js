@@ -7,7 +7,7 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       var tonto = document.getElementById('musica');
-      console.log('tonto ' + tonto);
+      console.log('tonto ' + tonto.getAttribute('rsc'));
       tonto.play();
       if (this.model.get('music')){
        var prueba = this.$('#musica');//.trigger('play');
