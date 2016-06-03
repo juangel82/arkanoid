@@ -1,0 +1,31 @@
+{
+  "name": "arkanoid",
+  "authors": [
+    "juangel82"
+  ],
+  "description": "practica para el modulo de web",
+  "main": "index.html",
+  "keywords": [
+    "arkanoid",
+    "phonegap",
+    "web",
+    "require",
+    "backbone",
+    "css",
+    "html",
+    "jquery",
+    "javascript",
+    "testem",
+    "mocha",
+    "chai"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "jquery-dist": "^2.1.3",
+    "backbone": "^1.3.3",
+    "text": "^2.0.15",
+    "backbone.localStorage": "^1.1.16"
+  }
+}
