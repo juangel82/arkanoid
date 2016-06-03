@@ -8,10 +8,7 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.$el.html(html);
       
        var tolo = document.getElementById('musica');
-       var src = tolo.getAttribute('rsc');
-       
-      
-      
+
         if (this.model.get('music')){
        
         console.log('deberia sonar');
@@ -20,6 +17,7 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
          var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
          media.play();
        } else{
+         media.pause();
           this.$('#musica').trigger('play');
        }
        
