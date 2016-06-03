@@ -7,7 +7,7 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       
-       var tolo = document.getElementById('musica');
+       var tolo = document.getElementsByTagName('source')[0];
 
         if (this.model.get('music')){
        
