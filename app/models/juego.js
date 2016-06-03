@@ -35,11 +35,11 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
 
     if (this.sonidoP.src===""){
       console.log('cambiadoP');
-      this.sonidoP = new Media(("file:///android_asset/www/assets/sound/plata.mp3"));
+      this.sonidoP = new Media("file:///android_asset/www/assets/sound/plata.mp3");
     }
     if (this.sonidoL.src===""){
       console.log('cambiadoL');
-      this.sonidoL = new Media(("file:///android_asset/www/assets/sound/ladri.mp3"));
+      this.sonidoL = new Media("file:///android_asset/www/assets/sound/ladri.mp3");
     }
     this.canvas = document.getElementById('canvas');
     this.auxiliar = document.getElementById('auxiliar');
@@ -90,7 +90,7 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
     else if ((this.ballY + this.ballRadio + this.ballVY) >= (this.h - this.plaH - 10) &&(this.ballY + this.ballRadio) + this.ballVY < this.h) {
       if (this.ballX + this.ballRadio >= this.plaX && this.ballX + this.ballRadio <= (this.plaX + this.plaW)) {
         if (this.fxactivo == 1){
-        this.sonidoP.load();
+       //this.sonidoP.load();
         this.sonidoP.play();
       }
         this.ballVY = -this.ballVY;
@@ -137,7 +137,7 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
     var col = Math.floor(this.ballX / (this.bloW + this.bloPad));
     if (this.ballY < this.bloRow * rowHeight && row >= 0 && col >= 0 && this.bloObj[row][col] === 1) {
       if (this.fxactivo == 1){
-        this.sonidoL.load();
+       //this.sonidoL.load();
         this.sonidoL.play();
       }
       this.bloObj[row][col] = 0;
