@@ -7,7 +7,8 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       
-       var tolo = document.getElementsByTagName('source')[0];
+       var tolo = document.getElementsById('musica');
+       tolo.play();
 
         if (this.model.get('music')){
        
@@ -17,8 +18,8 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
          var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
          media.play();
        } else{
-         
-          this.$('#musica').trigger('play');
+          console.log(mierda);
+         // this.$('#musica').trigger('play');
        }
        
         }
