@@ -10,7 +10,9 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
        document.getElementById('musica').play();
       
         if (this.model.get('music')){
-        this.$('#musica').trigger('play');
+        //this.$('#musica').trigger('play');
+        console.log('deberia sonar');
+        document.getElementById('musica').play();
         }
       else {
         this.$('#musica').trigger('pause');
