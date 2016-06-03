@@ -33,6 +33,14 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
     this.sonidoP = document.getElementById('golpeP');
     this.sonidoL = document.getElementById('golpeL');
 
+    if (this.sonidoP.src===""){
+      console.log('cambiadoP');
+      this.sonidoP = new Media(("file:///android_asset/www/assets/sound/plata.mp3"));
+    }
+    if (this.sonidoL.src===""){
+      console.log('cambiadoL');
+      this.sonidoL = new Media(("file:///android_asset/www/assets/sound/ladri.mp3"));
+    }
     this.canvas = document.getElementById('canvas');
     this.auxiliar = document.getElementById('auxiliar');
     this.canvas.width = this.w ;
