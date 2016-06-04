@@ -36,9 +36,9 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
     juego.start(optionsModel, topScoreCollection);
     },
     apagar: function(){
-      if (this.musica!==null){
+      this.musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
       this.musica.pause();
-      }
+      
     },
     mover: function(event) {
       juego.moverPla(event.offsetX);
