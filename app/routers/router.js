@@ -34,6 +34,7 @@ define (['models/options', 'models/puntuacion', 'collections/topscore', 'views/i
     scoreAction: function() {
       console.log('routers.js:scoreAction');
       IndexView.apagar();
+      gameView.apagar();
       scoreView.render(this.topscoreCollection, this.optionsModel);
     },
     optionsAction: function () {
