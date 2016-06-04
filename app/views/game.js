@@ -35,7 +35,7 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
 
     juego.start(optionsModel, topScoreCollection);
     },
-    apagar(): function(){
+    apagar: function(){
       this.musica.pause();
     },
     mover: function(event) {
