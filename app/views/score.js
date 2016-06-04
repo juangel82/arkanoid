@@ -13,7 +13,7 @@ define(['backbone', 'text!templates/puntuacion.html', 'collections/topscore', 'u
         musica = new Media("file:///android_asset/www/assets/sound/opciones.mp3");
       }
 
-        if (this.optionsModel.get('music')){
+        if (optionsModel.get('music')){
           console.log('deberia sonar');
          musica.play();
        } 
