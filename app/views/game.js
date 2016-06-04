@@ -18,7 +18,7 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
       juego.moverPla(touch.pageX - 50);
 
 });
-/*
+
        this.musica = document.getElementById('musica');
       if(this.musica.src === ""){
         console.log('lo cambio');
@@ -31,13 +31,13 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
     
       else {
        this.musica.pause();
-      }*/
+      }
 
     juego.start(optionsModel, topScoreCollection);
     },
     apagar(): function(){
       this.musica.pause();
-    }
+    },
     mover: function(event) {
       juego.moverPla(event.offsetX);
   },
