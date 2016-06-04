@@ -28,6 +28,7 @@ define (['models/options', 'models/puntuacion', 'collections/topscore', 'views/i
     },
     gameAction: function() {
       console.log('routers.js:gameAction');
+       IndexView.apagar();
       gameView.render(this.optionsModel, this.topscoreCollection);
     },
     scoreAction: function() {
@@ -37,6 +38,7 @@ define (['models/options', 'models/puntuacion', 'collections/topscore', 'views/i
     },
     optionsAction: function () {
       console.log('routers.js:optionAnction');
+       IndexView.apagar();
       optionsView.render(this.optionsModel, this.topscoreCollection);
     },
     creditsAction: function () {
