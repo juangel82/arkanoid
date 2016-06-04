@@ -8,7 +8,7 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.$el.html(html);
       
        var musica = document.getElementById('musica');
-      if(tolo.src === ""){
+      if(musica.src === ""){
         musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
       }
 
