@@ -7,20 +7,26 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       
-       var musica = document.getElementById('musica');
-      if(musica.src === ""){
+       this.musica = document.getElementById('musica');
+      if(this.musica.src === ""){
         console.log('lo cambio');
-        musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
+        this.musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
       }
 
         if (this.model.get('music')){
         console.log('deberia sonar');
-         musica.play();
+         this.musica.play();
        } 
     
       else {
         console.log('no deberia sonar');
-       musica.pause();
+       this.musica.pause();
+      }
+    },
+    apagar: function (){
+      if (this.musica!==null){
+        console.log('apagar');
+        this.musica.pause();
       }
     }
   });
