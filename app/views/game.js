@@ -19,11 +19,13 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
 
 });
 
+       this.musica = document.getElementById('musica');
+      if(this.musica.src === ""){
+        console.log('lo cambio');
+        this.musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
+      }
 
-       this.musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
-    
-
-        if (this.optionsModel.get('music')){
+        if (optionsModel.get('music')){
          this.musica.play();
        } 
     
