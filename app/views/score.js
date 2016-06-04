@@ -9,14 +9,16 @@ define(['backbone', 'text!templates/puntuacion.html', 'collections/topscore', 'u
        this.$el.html(html);
           var musica = document.getElementById('musica');
       if(musica.src === ""){
+        console.log('cambio');
         musica = new Media("file:///android_asset/www/assets/sound/opciones.mp3");
       }
 
-        if (this.model.get('music')){
+        if (this.optionsModel.get('music')){
+          console.log('deberia sonar');
          musica.play();
        } 
-    
       else {
+      console.log('no deberia sonar');
        musica.pause();
       }
        var texto = '';
