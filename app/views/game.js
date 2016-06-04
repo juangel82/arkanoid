@@ -18,12 +18,21 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
       juego.moverPla(touch.pageX - 50);
 
 });
-      if (optionsModel.get('music')) {
-        this.$('#musica').trigger('play');
+
+
+       var musica = document.getElementById('musica');
+      if(musica.src === ""){
+        musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
       }
+
+        if (this.model.get('music')){
+         musica.play();
+       } 
+    
       else {
-         this.$('#musica').trigger('pause');
+       musica.pause();
       }
+
     juego.start(optionsModel, topScoreCollection);
     },
 
