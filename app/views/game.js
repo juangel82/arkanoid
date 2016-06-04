@@ -20,22 +20,22 @@ define(['backbone', 'text!templates/juego.html', 'models/juego', 'jquery'], func
 });
 
 
-       var musica = document.getElementById('musica');
-      if(musica.src === ""){
-        musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
-      }
+       this.musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
+    
 
-        if (this.model.get('music')){
-         musica.play();
+        if (this.optionsModel.get('music')){
+         this.musica.play();
        } 
     
       else {
-       musica.pause();
+       this.musica.pause();
       }
 
     juego.start(optionsModel, topScoreCollection);
     },
-
+    apagar(): function(){
+      this.musica.pause();
+    }
     mover: function(event) {
       juego.moverPla(event.offsetX);
   },
