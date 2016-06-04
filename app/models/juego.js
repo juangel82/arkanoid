@@ -124,7 +124,8 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
   },
 
   pintaBarra: function() {
-    this.ctx.fillStyle = '#00FF00';
+    this.ctx.fillStyle = '#FFFFFF';
+    this.ctx.strokeStyle = '#000000';
     this.ctx.beginPath();
     this.ctx.fillRect(this.plaX, this.plaY, this.plaW, this.plaH);
     this.ctx.closePath();
@@ -161,8 +162,8 @@ define (['backbone', 'models/puntuacion'], function(Backbone, PuntuacionModel) {
 
   pintaInfo: function() {
     this.ctxaux.font = "30px digital";
-    this.ctxaux.fillText('puntuacion: ' + this.puntuacion, 20, this.auxiliar.height/1.5);
-    this.ctxaux.fillText('vidas: ' + this.vidas , this.auxiliar.width-100, this.auxiliar.height/1.5);
+    this.ctxaux.fillText('score: ' + this.puntuacion, 20, this.auxiliar.height/1.5);
+    this.ctxaux.fillText('lives: ' + this.vidas , this.auxiliar.width-100, this.auxiliar.height/1.5);
     this.ctxaux.fillStyle = '#FFFB00';
   },
 
