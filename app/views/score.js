@@ -7,11 +7,17 @@ define(['backbone', 'text!templates/puntuacion.html', 'collections/topscore', 'u
 
      render: function(model,optionsModel) {
        this.$el.html(html);
-       if (optionsModel.get('music')) {
-       this.$('#musica').trigger('play');
+          var musica = document.getElementById('musica');
+      if(musica.src === ""){
+        musica = new Media("file:///android_asset/www/assets/sound/opciones.mp3");
       }
+
+        if (this.model.get('music')){
+         musica.play();
+       } 
+    
       else {
-         this.$('#musica').trigger('pause');
+       musica.pause();
       }
        var texto = '';
        for (var i = 1; i <= model.length; ++i) {
