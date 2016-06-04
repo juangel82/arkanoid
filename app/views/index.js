@@ -7,29 +7,21 @@ define(['backbone', 'text!templates/inicio.html'], function(Backbone, html) {
       this.model = modelOptions;
       this.$el.html(html);
       
-       var tolo = document.getElementById('musica');
-       tolo.play();
+       var musica = document.getElementById('musica');
+      if(tolo.src === ""){
+        musica = new Media("file:///android_asset/www/assets/sound/musica.mp3");
+      }
 
         if (this.model.get('music')){
-       
-        console.log('deberia sonar');
-         if (tolo.src==="") {
-         console.log('es nulo');
-         var media = new Media("file:///android_asset/www/assets/sound/musica.mp3");
-         media.play();
-       } else{
-          console.log(mierda);
-         // this.$('#musica').trigger('play');
-       }
-       
-        }
+         musica.play();
+       } 
+    
       else {
-        media.pause();
-        this.$('#musica').trigger('pause');
+       musica.pause();
       }
     }
   });
-  var indexview = new IndexView(); //TODO: simplificar
+  var indexview = new IndexView();
   return indexview;
 });
 
